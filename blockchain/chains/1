@@ -1,6 +1,6 @@
 {
-  "sender": "Zeid",
-  "amount": 1000,
-  "recipient": "Amr",
-  "hash": ""
+    "sender": "Zeid",
+    "amount": "15",
+    "recipient": "Amr",
+    "hash": ""
 }

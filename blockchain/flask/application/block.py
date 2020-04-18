@@ -21,12 +21,15 @@ def get_hash(filename):
 def check_block_status():
     files = get_sorted_files()
 
+    results = []
     for file in files[1:]:
         actual_hash = json.load(open(blockchain_dir + str(file)))['hash']
         previous_file = str(file - 1)
         expected_hash = get_hash(previous_file)
-        res = 'correct' if actual_hash == expected_hash else 'corrupted'
+        res = 'OK' if actual_hash == expected_hash else 'corrupted'
         print(f"Block {previous_file} is {res}")
+        results.append({'block': previous_file, 'result': res})
+    return results
 
 
 def write_block(sender, amount, recipient):
