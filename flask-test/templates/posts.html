@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Все статьи на сайте
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Все статьи на сайте</h1>
+<!--    Call variable by its name from app.py-->
+    {% for el in post_articles %} <!-- Open cycle-->
+    <div class="alert alert-info">
+        <h2>{{ el.title }}</h2>
+        <p>{{ el.intro }}</p>
+        <p><b>Дата: {{ el.date.date() }}</b></p>
+        <a href="/posts/{{ el.article_id }}" class="btn btn-warning">Детальнее</a>
+    </div>
+    {% endfor %} <!-- Close the cycle-->
+</div>
+{% endblock %}

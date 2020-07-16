@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Страница про нас
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Добавление статьи</h1>
+<!--    If no `action` specified in form, then the form will be handled on the current page-->
+<!--    this is equivalent to <form action="create-article"></form>-->
+    <form method="post">
+<!--        class="'form-control" is from bootstrap to beautify the field view-->
+<!--        Set IDs to access them later as python dictionary keys-->
+        <input type="text" name="title" id="title" class="form-control" placeholder="Введите заголовок"><br>
+        <textarea name="intro" id="intro" class="form-control"placeholder="Введите интро"></textarea><br>
+        <textarea name="text" id="text" class="form-control" placeholder="Введите текст"></textarea><br>
+        <small id="textHelp" class="form-text text-muted">Импровизируйте :)</small><br>
+        <input type="submit" class="btn btn-success" value="Отправить"><br>
+    </form>
+</div>
+{% endblock %}
